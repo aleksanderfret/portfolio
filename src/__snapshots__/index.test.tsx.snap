@@ -3,17 +3,9 @@
 exports[`Home renders homepage unchanged 1`] = `
 <div>
   <div>
-    <main>
-      <h1>
-        Home
-      </h1>
-      <div>
-        cancel
-      </div>
-    </main>
-    <footer>
-      Date
-    </footer>
+    <h1>
+      Home
+    </h1>
   </div>
 </div>
 `;

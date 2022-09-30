@@ -5,14 +5,14 @@ import Head from 'next/head';
 import { i18n } from 'config/i18n';
 import Title from 'components/title';
 
-export default function Home() {
+export default function Admin() {
   return (
     <div>
       <Head>
-        <Title>Home</Title>
+        <Title>Admin</Title>
       </Head>
 
-      <h1>Home</h1>
+      <h1>Admin</h1>
     </div>
   );
 }
