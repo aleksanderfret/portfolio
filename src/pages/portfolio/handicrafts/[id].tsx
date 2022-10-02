@@ -1,6 +1,7 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
-import { GetStaticProps } from 'next';
+import { ParsedUrlQuery } from 'querystring';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { i18n } from 'config/i18n';
 import Title from 'components/title';
@@ -16,10 +17,41 @@ export default function GreetingCard() {
     </div>
   );
 }
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+
+interface Params extends ParsedUrlQuery {
+  id: string;
+}
+
+interface HandicraftProps {
+  id?: string;
+}
+
+export const getStaticProps: GetStaticProps<HandicraftProps, Params> = async ({
+  params,
+  locale,
+}) => {
+  const { id } = params || {};
+
   return {
     props: {
+      id,
       ...(await serverSideTranslations(locale || i18n.defaultLocale)),
     },
+    notFound: false,
+    revalidate: 60,
+    // redirect: {
+    //   destination: '/',
+    // },
+  };
+};
+
+export const getStaticPaths: GetStaticPaths<Params> = async () => {
+  return {
+    paths: [
+      { params: { id: '1' } },
+      { params: { id: '2' } },
+      { params: { id: '3' } },
+    ],
+    fallback: false, // 'blocking'S
   };
 };

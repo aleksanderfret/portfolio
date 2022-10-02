@@ -21,5 +21,10 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     props: {
       ...(await serverSideTranslations(locale || i18n.defaultLocale)),
     },
+    notFound: false,
+    revalidate: 60,
+    // redirect: {
+    //   destination: '/',
+    // },
   };
 };
