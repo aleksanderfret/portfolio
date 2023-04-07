@@ -24,6 +24,7 @@
       "components/*": ["src/components/*"],
       "pages/*": ["src/pages/*"],
       "config/*": ["src/config/*"],
+      "utils/*": ["src/utils/*"],
       "public/*": ["public/*"]
     },
     "preserveConstEnums": true,

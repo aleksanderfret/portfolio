@@ -1,3 +1,11 @@
 {
-  "cancel": "anuluj"
+  "cancel": "anuluj",
+  "page.home": "start",
+  "page.about": "start",
+  "page.portfolio": "portfolio",
+  "page.illustrations": "illustracje",
+  "page.greetingCards": "kartki",
+  "page.handicrafts": "rękodzieła",
+  "page.contact": "kontakt",
+  "page.admin": "admin"
 }

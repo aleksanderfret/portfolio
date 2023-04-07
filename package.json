@@ -26,7 +26,8 @@
     "test:staged": "jest --bail --findRelatedTests --passWithNoTests",
     "test:update": "jest --updateSnapshot",
     "test:watch": "jest --watch",
-    "validateBranch": "npx ts-node -T scripts/validateBranchName.ts"
+    "validateBranch": "npx ts-node -T scripts/validateBranchName.ts",
+    "parse": "npx ts-node -T scripts/transform.ts"
   },
   "dependencies": {
     "next": "latest",
